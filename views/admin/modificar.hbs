@@ -1,0 +1,43 @@
+<div class="container" style="margin: 100px 0;">
+    <div class="row justify-content-center">
+        <div class="col-8"> <!-- Cambié el tamaño a 8 para que ocupe más espacio -->
+            <h4 class="text-center">Modificar la novedad</h4>
+            <form action="admin/novedades/modificar" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="{{novedad.id}}" name="id">
+                
+                <div class="form-group"> Título:
+                    <input type="text" placeholder="Título" class="form-control" name="titulo" value="{{novedad.titulo}}">
+                </div>
+
+                <div class="form-group">Subtítulo:
+                    <textarea class="form-control" name="subtitulo" placeholder="Subtítulo">{{novedad.subtitulo}}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Imagen:
+                        <input type="file" name="imagen" id="imagen" class="form-control-file">
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="img_delete" id="img_delete"> Eliminar imagen actual?
+                    </label>
+                    <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+                </div>
+
+                <div class="form-group"> Cuerpo:
+                    <textarea type="text" class="form-control" name="cuerpo" placeholder="Cuerpo">{{novedad.cuerpo}}</textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Modificar</button>
+                </div>
+            </form>
+
+            {{#if error}} 
+                <p class="text-danger text-center">{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

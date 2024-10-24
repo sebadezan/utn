@@ -1,0 +1,70 @@
+<div class="container log-out" style="margin-top: 100px auto">
+    <div class="row">
+        <div class="col">
+            <p class="text-right">
+                Hola, <strong>{{persona}}</strong>!
+                <a href="/admin/login/logout" class="btn btn-danger logout-btn">
+                    Cerrar Sesión <i class="fa fa-sign-out"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h2>Listado de Novedades</h2>
+        </div>
+        <div class="col-2 text-right">
+            <a href="/admin/novedades/agregar" class="btn btn-success">
+            <i class="fa fa-plus"></i>Nuevo</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">Título</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col" class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each novedades}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{titulo}}</td>
+                        <td>{{{imagen}}}</td>
+                        <td class="text-center">
+                            <a href="/admin/novedades/modificar/{{id}}" title="editar" class="btn btn-secondary">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                            <a href="admin/novedades/eliminar/{{id}}" title="eliminar" class="btn btn-secondary">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{{#each novedades}}
+<div class="modal fade" id="modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">{{titulo}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button> <!-- Corrección aquí -->
+            </div>
+            <div class="modal-body">
+                <h2>{{subtitulo}}</h2>
+                <img src="{{imagen}}" />
+                <p>{{cuerpo}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}

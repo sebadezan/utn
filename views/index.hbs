@@ -1,0 +1,223 @@
+<div class="container-fluid mt-5 pt-5"><!--Contenido del Encabezado-->
+    <div id="home" class="row align-items-center hero">
+        <div class="col-lg-3 offset-lg-2">
+            <h1>Gimnasio Zero</h1>
+            <p>Somos un gimnasio de Argentina. Contamos con la ayuda de varios profesionales en el equipo. 
+                En el gimnasio se desarrollan varias actividades: Crossfit, Boxeo, Levantamiento Olímpico y mucho más. 
+                ¡Acercate a conocernos!</p>
+        </div>
+    </div>
+</div>
+
+<div class="container my-3"><!--Contenedor de novedades y testimonios en la misma línea-->
+    <div class="row">
+        <div id="novedades" class="col-md-7">
+            <h2>Novedades</h2>
+            <ul class="lista-novedades scroll_section"><!--Lista de Novedades-->
+                {{#each novedades}}
+                <li>
+                    <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modal{{id}}"><img
+                            src="{{imagen}}" width="120">{{titulo}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{#each novedades}}
+        <div class="modal fade" id="modal{{id}}" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">{{titulo}}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h2>{{titulo}}</h2>
+                        <h3>{{subtitulo}}</h3>
+                        <img src="{{imagen}}" alt="{{titulo}}">
+                        <p>{{cuerpo}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+        <div class="col-md-4"><!--inicio de testimonios-->
+            <div class="rounded py-5 testimonios scroll_section">
+                <h2 class="text-center">Horarios de Atención en Nuestras Sucursales</h2>
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="testimonio">
+                                <h4>Sucursal Parque Patricios</h4>
+                                <p>Nos encontramos en Avenida Pepirí al 1535, los horarios son de 7:00 AM a 19:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonio">
+                                <h4>Sucursal Flores</h4>
+                                <p>Nos encontramos en Avenida Avellaneda al 520, los horarios son de 7:00 AM a 23:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonio">
+                                <h4>Sucursal Devoto</h4>
+                                <p>Nos encontramos en Avenida San Martín 3231, los horarios son de 6:00 AM a 19:30 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--fin de testimonios-->
+
+<div id="historia" class="row align-items-center py-4 scroll_section"><!--inicio de historia-->
+    <div class="col-lg-2 col-md-3 offset-lg-2 d-none d-sm-block">
+        <img src="\img\foto gym.jpg" alt="foto de la instalación" class="img-fluid">
+    </div>
+    <div class="col-lg-2 col-md-3 d-none d-sm-block">
+        <img src="\img\log gym.jpg" alt="alguno de los grupos de entrenadores" class="img-fluid">
+    </div>
+    <div class="col-lg-4 col-md-6 mt-4 mt-sm-0">
+        <h2>Historia</h2>
+        <p>Nosotros somos personas que entrenamos y sabemos que para buscar nuestra mejor versión debemos buscar un
+            lugar apto con los mejores profesionales y las mejores instalaciones. Por eso, creamos esta cadena de
+            gimnasios para quienes busquen mejorar y alcanzar sus objetivos soñados.
+        </p>
+    </div>
+</div>
+
+<div id="Nosotros" class="row align-items-stretch my-3 staff py-4 scroll_section">
+    <div class="col-lg-6 offset-lg-3">
+        <h2>Nosotros</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="/img/profesor-d-crossfit.jpg" class="card-img-top" alt="Profesor de Crossfit">
+                    <div class="card-body">
+                        <h5 class="card-title">Sebastián García, Crossfit</h5>
+                        <p class="card-text">Sebastián es un instructor de CrossFit con más de 8 años de experiencia en
+                            el entrenamiento funcional de alta intensidad.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="/img/persona1.jpg" class="card-img-top" alt="Instructora de Gimnasio">
+                    <div class="card-body">
+                        <h5 class="card-title">Marcela Gutiérrez, Instructora de Gimnasio</h5>
+                        <p class="card-text">Marcela tiene conocimientos sobre entrenamiento personal, entrenamiento
+                            funcional, Pilates, nutrición deportiva y ejecución de ejercicios. Ayudó a varias personas con su
+                            adaptación e introducción al gimnasio.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="/img/instructor.jpg" class="card-img-top" alt="Profesor de Boxeo">
+                    <div class="card-body">
+                        <h5 class="card-title">Gustavo Cats, Profesor de Boxeo</h5>
+                        <p class="card-text">Gustavo tiene más de 10 años de experiencia entrenando gente. Es un
+                            entrenador
+                            reconocido ya que cuenta con un certificado de entrenador de la Federación Argentina de
+                            Boxeo (FAB).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="\img\levantador olimpico.jpg" class="card-img-top"
+                        alt="Profesor de Levantamiento Olímpico">
+                    <div class="card-body">
+                        <h5 class="card-title">Juan Carlos, Levantamiento Olímpico</h5>
+                        <p class="card-text">Juan es un entrenador que ha entrenado tanto atletas de alto rendimiento como
+                            principiantes. Cuenta con 15 años de experiencia como entrenador y ha competido en
+                            halterofilia,
+                            consiguiendo varios podios a nivel nacional e internacional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mapas" class="row py-4 scroll_section"><!-- Inicia conocenos -->
+    <div class="col-md-4">
+        <h5>Sucursal Parque Patricios</h5>
+        <p></p>
+        <div class="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7534474523045!2d-58.47977492462465!3d-34.61039555785036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc96c40aebd63%3A0x5729488cba682f0b!2sPepiri%201535%20pompeya!5e0!3m2!1ses!2sar!4v1723468979921!5m2!1ses!2sar">
+            </iframe>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h5>Sucursal Flores</h5>
+        <p></p>
+        <div class="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.1855908593566!2d-58.47091611114502!3d-34.62475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc98baf1c8447%3A0xf4a242cd6ab4b9ac!2s2518%20Avellaneda%20Av.!5e0!3m2!1ses!2sar!4v1723470429336!5m2!1ses!2sar">
+            </iframe>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h5>Sucursal Devoto</h5>
+        <p></p>
+        <div class="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.66884480607!2d-58.56725172288223!3d-34.61253449816719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb8190614adf7%3A0xc29f7f947d765d54!2sAv.%20San%20Mart%C3%ADn%203231%2C%20B1678GQI%20Caseros%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1723470609347!5m2!1ses!2sar">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<div id="contactanos" class="row-cols-md-2 conocenos scroll_section">
+    <div>
+        <h2>Contáctanos</h2>
+        <form class="row g-3" action="/" method="post">
+            <div class="col-md-6">
+                <label for="Nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="Nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="col-md-6">
+                <label for="Apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="Apellido" name="apellido" placeholder="Ingresa tu apellido" required>
+            </div>
+            <div class="col-md-6">
+                <label for="Dni" class="form-label">DNI</label>
+                <input type="text" class="form-control" id="Dni" name="dni" placeholder="Ingresa tu DNI" required>
+            </div>
+            <div class="col-md-6">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" required>
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu email" required>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+        {{message}}
+    </div>
+</div>
+<!-- Cierra conocenos -->
